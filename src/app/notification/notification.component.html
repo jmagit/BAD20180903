@@ -1,3 +1,11 @@
-<p>
-  notification works!
-</p>
+<div class="notificaciones" *ngIf="Notify.Listado.length > 0">
+  <ul>
+    <li *ngFor="let item of Notify.Listado; let i=index;">
+      {{item}}
+      <button type="button" (click)="Notify.remove(i)"><i class="fa fa-close"></i></button>
+    </li>
+  </ul>
+  <div style="margin-left:auto;margin-right:auto;">
+  <input type="button" value="Cerrar" (click)="Notify.clear()">
+  </div>
+</div>

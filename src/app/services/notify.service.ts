@@ -10,7 +10,7 @@ export class NotifyService {
   constructor(private out: LoggerService) { }
 
   public get Listado() {
-    return Object.assign({}, this.listado);
+    return Object.assign([], this.listado);
   }
 
   public add(msg: string): void {
