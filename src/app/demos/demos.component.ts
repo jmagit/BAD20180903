@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotifyService } from '../services/notify.service';
+import { ElipsisPipe } from '../../my-core';
 
 @Component({
   selector: 'app-demos',
@@ -26,6 +27,7 @@ export class DemosComponent implements OnInit {
   resultado: any;
   visible = true;
   estetica = { importante: true, error: false, urgente: true };
+  fontsize = 12;
 
   constructor(public notify: NotifyService) { }
 
@@ -36,7 +38,8 @@ export class DemosComponent implements OnInit {
     this.resultado = `Hola ${this.nombre}`;
   }
   public despide() {
-    this.resultado = `Adios ${this.nombre}`;
+    let pipe = new ElipsisPipe();
+    this.resultado = pipe.transform(`Adios ${this.nombre}`, 50);
   }
   public di(algo: string) {
     this.resultado = `Dice ${algo}`;

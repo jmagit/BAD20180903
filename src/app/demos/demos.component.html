@@ -1,4 +1,4 @@
-<h1>Hola {{Nombre}}</h1>
+<h1>Hola {{Nombre | elipsis:10 | uppercase}}</h1>
 <p>
   <input type="text" [(ngModel)]="Nombre">
   <input type="button" value="saluda" (click)="saluda()">
@@ -15,7 +15,8 @@
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem quae quasi fugiat autem fugit, dolore deleniti eos maiores placeat ducimus iste nemo velit error nobis dolorum voluptates, totam mollitia?
 </p>
 <p [class.invisible]="!visible">Visible con clase</p>
-<p>
+<my-sizer [(size)]="fontsize"></my-sizer>
+<p [style.font-size.px]="fontsize">
   Calcula: 2 + 2 = {{2+2}} =
     {{calcula(2, 2)|currency:'EUR':'symbol':'1.2-2'}}
 </p>
