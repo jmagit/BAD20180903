@@ -1,0 +1,9 @@
+.importante {
+  font-size: 14pt;
+}
+.urgente {
+  font-style: italic;
+}
+.invisible {
+  color: lightgrey;
+}
