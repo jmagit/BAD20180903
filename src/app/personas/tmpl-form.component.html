@@ -27,7 +27,7 @@
     <input type="text" name="apellidos" id="apellidos"
       [(ngModel)]="VM.Elemento.apellidos" #apellidos="ngModel"
       minlength="2" maxlength="10">
-    <span [hidden]="!apellidos?.errors?.minlength && !apellidos?.errors?.maxlength">
+    <span class="error" [hidden]="!apellidos?.errors?.minlength && !apellidos?.errors?.maxlength">
       Debe tener entre 2 y 10 letras.
     </span>
     <br>
@@ -35,7 +35,7 @@
     <input type="number" name="edad" id="edad"
       [(ngModel)]="VM.Elemento.edad" #edad="ngModel"
       min="18" max="67">
-    <span [hidden]="!edad?.errors?.min && !edad?.errors?.max">
+    <span class="error" [hidden]="!edad?.errors?.min && !edad?.errors?.max">
       Debe estar entre 18 y 67 letras.
     </span>
   </p>
