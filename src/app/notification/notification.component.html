@@ -1,11 +1,16 @@
-<div class="notificaciones" *ngIf="Notify.Listado.length > 0">
+<div class="notificaciones" *ngIf="Notify.HayNotificaciones" >
   <ul>
-    <li *ngFor="let item of Notify.Listado; let i=index;">
+    <li *ngFor="let item of Notify.Listado; let indice=index;" >
       {{item}}
-      <button type="button" (click)="Notify.remove(i)"><i class="fa fa-close"></i></button>
+      <button type="button" (click)="Notify.remove(indice)">
+        <i class="fa fa-close"></i>
+      </button>
     </li>
   </ul>
   <div class="center">
-  <input type="button" value="Cerrar" (click)="Notify.clear()">
+      <button type="button" (click)="Notify.clear()">
+        <i class="fa fa-close"></i> Cerrar
+      </button>
+
   </div>
 </div>

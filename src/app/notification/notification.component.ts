@@ -9,8 +9,7 @@ import { NotifyService } from '../services/notify.service';
 export class NotificationComponent implements OnInit {
   constructor(private srv: NotifyService) { }
 
-  public get Notify() { return this.srv; }
-
+  get Notify() { return this.srv; }
 
   ngOnInit() {
   }

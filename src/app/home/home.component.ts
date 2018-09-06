@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   title = 'Hola Mundo';
 
   constructor(private notify: NotifyService) {
-    notify.add('Demo del servicio');
+    // notify.add('Demo del servicio');
   }
 
   ngOnInit() {

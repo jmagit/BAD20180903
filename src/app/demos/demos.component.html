@@ -32,6 +32,14 @@
     (click)="notify.add('Mandado desde demo')">
   <input type="button" value="cambia" (click)="cambia()">
 </p>
+<ul>
+    <li *ngFor="let item of notify.Listado; let indice=index;" >
+      {{item}}
+      <button type="button" (click)="notify.remove(indice)">
+        <i class="fa fa-close"></i>
+      </button>
+    </li>
+  </ul>
 <p [textContent]="resultado">Contenido que se pierde</p>
 <p [hidden]="!visible">Ahora me ves</p>
 <p *ngIf="visible">Ahora existo</p>

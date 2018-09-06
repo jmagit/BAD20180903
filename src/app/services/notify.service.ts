@@ -12,6 +12,9 @@ export class NotifyService {
   public get Listado() {
     return Object.assign([], this.listado);
   }
+  public get HayNotificaciones() {
+    return this.listado.length > 0;
+  }
 
   public add(msg: string): void {
     if (msg) {
