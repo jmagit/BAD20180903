@@ -13,6 +13,7 @@ export class PersonasDAOService extends BaseDAOService {
   }
 }
 
+@Injectable()
 export class PersonasDAOViewModelService {
   protected modo: 'list' | 'add' | 'edit' | 'view' | 'delete' = 'list';
   protected listado: Array<any>;
@@ -21,7 +22,9 @@ export class PersonasDAOViewModelService {
   protected pk = 'id';
 
   constructor(private notify: NotifyService,
-    private out: LoggerService, protected dao: PersonasDAOService) { }
+    private out: LoggerService, protected dao: PersonasDAOService) {
+
+    }
 
   public get Listado() { return this.listado; }
   public get Elemento() { return this.elemento; }
@@ -98,6 +101,7 @@ export class PersonasDAOViewModelService {
   }
 }
 
+@Injectable()
 export class PersonasViewModelService {
   protected modo: 'list' | 'add' | 'edit' | 'view' | 'delete' = 'list';
   protected listado: Array<any>;
