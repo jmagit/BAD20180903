@@ -1,13 +1,15 @@
 <table>
   <tr>
     <th>Nombre</th>
-    <th><button type="button" (click)="VM.add()">Nuevo</button></th>
+    <th><button type="button" routerLink="/personas/add" >Nuevo</button></th>
   </tr>
   <tr *ngFor="let item of VM.Listado">
-    <td>{{item.nombre}} {{item.apellidos}}</td>
+    <td><a routerLink="/personas/{{item.id}}/{{item.nombre}}-{{item.apellidos}}">
+      {{item.nombre}} {{item.apellidos}}
+    </a>
+    </td>
     <td>
-      <button type="button" (click)="VM.view(item.id)">Ver</button>
-      <button type="button" (click)="VM.edit(item.id)">Editar</button>
+      <button type="button" [routerLink]="['/personas', item.id, 'edit']">Editar</button>
       <button type="button" (click)="VM.delete(item.id)">Borrar</button>
     </td>
   </tr>

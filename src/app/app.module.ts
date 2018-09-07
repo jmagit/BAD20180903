@@ -5,6 +5,7 @@ registerLocaleData(localeEs, 'es', localeEsExtra);
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,9 @@ import { DinamicoComponent } from './dinamico/dinamico.component';
 import { PERSONAS_COMPONETS } from './personas/personas.component';
 import { PersonasViewModelService, PersonasDAOViewModelService, PersonasDAOService } from './personas/personas.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -28,10 +32,13 @@ import { HttpClientModule } from '@angular/common/http';
     NotificationComponent,
     CalculadoraComponent,
     DinamicoComponent,
-    PERSONAS_COMPONETS
+    PERSONAS_COMPONETS,
+    MenuComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
+    RouterModule.forRoot(routes),
     MyCoreModule, ClientesModule
   ],
   providers: [

@@ -3,6 +3,7 @@ import { NotifyService } from '../services/notify.service';
 import { LoggerService } from '../../my-core';
 import { BaseDAOService } from '../base-class/base-dao.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +21,11 @@ export class PersonasDAOViewModelService {
   protected elemento: any;
   protected idOriginal: any;
   protected pk = 'id';
+  protected urlList = '/personas';
 
   constructor(private notify: NotifyService,
-    private out: LoggerService, protected dao: PersonasDAOService) {
+    private out: LoggerService, protected dao: PersonasDAOService,
+      protected router: Router) {
 
     }
 
@@ -77,7 +80,8 @@ export class PersonasDAOViewModelService {
   public cancel() {
     this.elemento = null;
     this.idOriginal = null;
-    this.list();
+    // this.list();
+    this.router.navigateByUrl(this.urlList);
   }
 
   public send() {
