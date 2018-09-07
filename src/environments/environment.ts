@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   ERROR_LEVEL: 5,
+  API_REST: 'http://localhost:4321/ws/',
 };
 
 /*

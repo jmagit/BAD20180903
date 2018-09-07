@@ -26,9 +26,12 @@
     Apellidos:
     <input type="text" name="apellidos" id="apellidos"
       [(ngModel)]="VM.Elemento.apellidos" #apellidos="ngModel"
-      minlength="2" maxlength="10">
+      minlength="2" maxlength="10" upperCase>
     <span class="error" [hidden]="!apellidos?.errors?.minlength && !apellidos?.errors?.maxlength">
       Debe tener entre 2 y 10 letras.
+    </span>
+    <span class="error" [hidden]="!apellidos?.errors?.upperCase">
+      Tiene que estar en mayusculas.
     </span>
     <br>
     Edad:

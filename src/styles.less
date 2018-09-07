@@ -1,5 +1,6 @@
+@colorError: red;
 .error {
-  color: red;
+  color: @colorError;
 }
 
 /* Formularios ******************************************************/
@@ -13,7 +14,7 @@ form .ng-dirty {
 }
 form .ng-invalid {
   border-color: red;
-  box-shadow: 5px 5px 5px red;
+  box-shadow: 5px 5px 5px @colorError;
   margin-right: 10px;
   transform: scale(1.02);
   transition: all linear 1s;
