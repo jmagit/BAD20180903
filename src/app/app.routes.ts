@@ -23,5 +23,6 @@ export const routes: Routes = [
   ] },
   { path: 'pepito/grillo', redirectTo: '/personas/2/pepito-grillo' },
   { path: '404.html', component: PageNotFoundComponent },
+  { path: 'config', loadChildren: './configuracion/configuracion.module#ConfiguracionModule' },
   { path: '**', component: PageNotFoundComponent },
 ];
